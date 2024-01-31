@@ -5,7 +5,7 @@ const Homepage = () => {
 	return (
 		<div>
 			<CardComponent />
-		 	<Banner name="Krisna" />
+		 	<Banner name="Krisna" desc="bklsdlandlas alsdnalns ds lasnkdlask" />
 		</div>
 	)
 } 
