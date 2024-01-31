@@ -1,5 +1,6 @@
 import { useEffect, useState } from 'react'
 import axios from 'axios'
+import CardData from '../../components/card-data/CardData'
 
 const Homepage = () => {
 	const [data, setData] = useState([])
@@ -7,19 +8,19 @@ const Homepage = () => {
 	useEffect(() => {
 		axios.get('https://jsonplaceholder.typicode.com/users')
 		.then(res => setData(res.data))
-		.catch(err => console.log(err))
+		.catch(err => alert(err))
 	}, [])
 
 	return (
-		<div>
+		<div className='grid grid-cols-4 gap-4'>
 			{data.map((item) => {
-				console.log(item)
 				return (
-					<div>
-						<h1>{item.name}</h1>
-						<h2>{item.phone}</h2>
-						<h3>{item.email}</h3>
-					</div>
+					<CardData
+						name={item.name}
+						phone={item.phone}
+						email={item.email}
+						address={item.address.street}
+					/>
 				)
 			})}
 		</div>
