@@ -1,5 +1,5 @@
 import { useState } from 'react'
-// import Homepage from './pages/Homepage/Homepage'
+import Homepage from './pages/Homepage/Homepage'
 import Detail from './pages/Detail/Detail'
 import './App.css'
 
@@ -8,8 +8,8 @@ function App() {
 
   return (
     <>
-			{/* <Homepage /> */}
-			<Detail />
+			<Homepage />
+			{/* <Detail /> */}
     </>
   )
 }

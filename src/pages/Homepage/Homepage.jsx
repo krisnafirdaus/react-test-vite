@@ -1,11 +1,27 @@
-import CardComponent from '../../components/card/index'
-import Banner from '../../components/banner/Banner'
+import { useEffect, useState } from 'react'
+import axios from 'axios'
 
 const Homepage = () => {
+	const [data, setData] = useState([])
+
+	useEffect(() => {
+		axios.get('https://jsonplaceholder.typicode.com/users')
+		.then(res => setData(res.data))
+		.catch(err => console.log(err))
+	}, [])
+
 	return (
 		<div>
-			<CardComponent />
-		 	<Banner name="Krisna" desc="bklsdlandlas alsdnalns ds lasnkdlask" />
+			{data.map((item) => {
+				console.log(item)
+				return (
+					<div>
+						<h1>{item.name}</h1>
+						<h2>{item.phone}</h2>
+						<h3>{item.email}</h3>
+					</div>
+				)
+			})}
 		</div>
 	)
 } 
