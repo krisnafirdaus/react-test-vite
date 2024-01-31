@@ -12,7 +12,7 @@ const Homepage = () => {
 	}, [])
 
 	return (
-		<div className='grid grid-cols-4 gap-4'>
+		<div className='grid grid-cols-4 gap-4 bg-black'>
 			{data.map((item) => {
 				return (
 					<CardData
